@@ -11,19 +11,19 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      mainList: []
-    }
+      data: []
+    };
   }
 
   componentDidMount(){
     // fetch("https://api.coinmarketcap.com/v1/ticker/?limit=2000")
-    // fetch("https://api.coinmarketcap.com/v1/ticker/?limit=20")
-    fetch(dataShort)
-    .then(function(response) {
+    fetch("https://api.coinmarketcap.com/v1/ticker/?limit=20")
+    // fetch(dataShort)
+    .then(response => {
       return response.json();
-    }).then(function(myJson) {
-      this.setState({mainList: myJson});
-    }).catch(()=>console.log('error with fetch'));
+    }).then(myJson => {
+      this.setState({data: myJson});
+    })
     
 }
   
@@ -33,7 +33,7 @@ class App extends Component {
         <div className="wrapper">
           <SecHeader />
           <SecSearch />
-          <SecBody  />
+          <SecBody data={this.state.data}/>
           <SecFooter />
           <section>
             All rights reserved. Designed by Pok Tik Benjamin Leung.
