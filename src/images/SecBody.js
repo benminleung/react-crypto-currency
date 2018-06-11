@@ -21,6 +21,7 @@ class SecBody extends Component {
             }
             return `${number}`;
         }
+        
         const name = item.name;
         const symbol = item.symbol;
         const supply = supplyProcess(item.available_supply);
@@ -48,8 +49,10 @@ class SecBody extends Component {
 
     return (
       <section className="SecBody">
-        {console.log(this.props.data)}
-        {data.map(this.printData)}
+            <div className="mainContent">
+                {console.log(this.props.data)}
+                {data.map(this.printData)}
+            </div>
       </section>
     );
   }
