@@ -1,45 +1,40 @@
 import React, { Component } from "react";
 import "./App.css";
 import SecHeader from "./SecHeader";
+import SecSearch from "./SecSearch";
+import SecBody from "./images/SecBody";
+import SecFooter from "./SecFooter";
+import "./data/dataShort";
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      mainList: []
+    }
+  }
+
+  componentDidMount(){
+    // fetch("https://api.coinmarketcap.com/v1/ticker/?limit=2000")
+    // fetch("https://api.coinmarketcap.com/v1/ticker/?limit=20")
+    fetch(dataShort)
+    .then(function(response) {
+      return response.json();
+    }).then(function(myJson) {
+      this.setState({mainList: myJson});
+    }).catch(()=>console.log('error with fetch'));
+    
+}
+  
   render() {
     return (
       <div className="App">
         <div className="wrapper">
           <SecHeader />
-          <section className="secSearch">
-            <input
-              className="searchBar"
-              type="text"
-              id="searchBar"
-              placeholder="Search"
-            />
-            <div className="sortBar" id="sortBar">
-              <div>Sort by</div>
-              <label className="sortBtn btnShadow active" id="sortByrank">
-                Rank
-              </label>
-              <label className="sortBtn btnShadow" id="sortByname">
-                Name
-              </label>
-              <label className="sortBtn btnShadow" id="sortByprice_usd">
-                Price
-              </label>
-              <label
-                className="sortBtn btnShadow"
-                id="sortBypercent_change_24h"
-              >
-                Change
-              </label>
-            </div>
-          </section>
-          <section className="secBody" id="secBody" />
-
-          <section className="secFooter">
-            <div>Footer</div>
-          </section>
-
+          <SecSearch />
+          <SecBody  />
+          <SecFooter />
           <section>
             All rights reserved. Designed by Pok Tik Benjamin Leung.
           </section>

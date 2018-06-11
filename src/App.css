@@ -63,14 +63,14 @@ label {
       text-shadow: 1px 3px 2px rgba(244,247,246,0.4);
   }
 
-.secSearch {
+.SecSearch {
   position: sticky;
   top: 0;
   background: linear-gradient(var(--background-color), #F4F7F6);
   padding-bottom: 1em;
 }
 
-.secBody {
+.SecBody {
 
 }
   .searchBar{
