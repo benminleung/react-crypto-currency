@@ -60,7 +60,7 @@ const SecSearch = (props) => {
   return (<section className='SecSearch'>
     <input
       className="searchBar" onInput={(e)=>props.searchChange(applyFilter(e.target.value.toLowerCase()))} type="text" id="searchBar" placeholder="Search"/>
-    <div className="sortBar" id="sortBar">
+    <div className="sortBar">
       <div>Sort by</div>
       {/* onClick={applySort(props.sortChange(props.state.filteredData))} */}
       <label className={active("rank")} onClick={()=>props.sortChange(applySort(props.state.filteredData, 'rank'), 'rank')}>
