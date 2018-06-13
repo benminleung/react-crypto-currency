@@ -53,6 +53,9 @@ label {
 
 .SecHeader {
   text-align: center;
+  position: relative;
+  background: var(--background-color);
+  z-index: 1;
 }
   .header {
       background-image: url(./images/code_photo.jpeg);
@@ -67,7 +70,8 @@ label {
   position: sticky;
   top: 0;
   background: linear-gradient(var(--background-color), #F4F7F6);
-  padding-bottom: 1em;
+  padding: 1em 0;
+  box-shadow: var(--shadow);
 }
 
 .SecBody {
