@@ -68,4 +68,5 @@ const SecBody = (props) => {
     );
 }
 
+
 export default SecBody;
