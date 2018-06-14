@@ -75,7 +75,7 @@ label {
 }
 
 .SecBody {
-
+    margin-bottom: 1em;
 }
   .searchBar{
       border: none;
@@ -98,27 +98,60 @@ label {
   
   .sortBar {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr repeat(4, 0fr) 1fr;
       grid-template-rows: auto auto;
+      grid-row-gap: 1em;
+      grid-column-gap: 1.5em;
       justify-content: center;
       justify-items: center;
       text-align: center;
-      max-width: 30em;
+      /* max-width: 40em; */
       margin-top: 1em;
   }
-      .sortBar div{
-          grid-column: 1 / -1;
+      .sortBar .sortByText{
+          justify-self: right;
+          align-self: center;
+          font-weight: bold;
+      }
+
+      .sortBar .showingResults{
+          grid-column: 2 / -2;
+          font-size: 1.2em;
       }
       .sortBtn{
           width: max-content;
           padding: 1em;
           border-radius: 5px;
-          background: var(--background-color);
+          background: var(--background-color);    
+          place-self: center;      
       }
       .active {
           background: var(--secondary-color);
           color: white;
       }
+      .sortOrder {
+          border-radius: 50%;
+          margin: 0 2vw;
+          width: 2em;
+          height: 2em;
+          display: grid;
+          grid-template: 1fr 1fr / 1fr 1fr;
+          grid-auto-flow: column;
+          place-content: center;
+      }
+        .sortArrow {
+            grid-row: 1 / -1;
+            font-size: 1.5em;
+        }
+
+    .showMoreBtn {
+        grid-column: 1/ -1;
+        justify-self: stretch;
+        margin: 0 20vw;
+        padding: 1em;
+        border-radius: 5px;
+        background: var(--background-color);
+    }
 
 
   .mainContent {
